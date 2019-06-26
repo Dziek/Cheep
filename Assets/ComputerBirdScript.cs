@@ -21,8 +21,9 @@ public class ComputerBirdScript : BaseBird {
 		birdAS.Play();
 		birdGraphicsScript.StartCheep();
 		currentGameSection.OBCheepStarted();
+		isCurrentlyCheeping = true;
 		
-		while (t < time)
+		while (t < time && isCurrentlyCheeping == true)
 		{
 			t += Time.deltaTime;
 			yield return null;
@@ -30,7 +31,7 @@ public class ComputerBirdScript : BaseBird {
 			
 		birdAS.Stop();
 		birdGraphicsScript.StopCheep();
-		
+		isCurrentlyCheeping = false;
 		currentGameSection.OBCheepFinished();
 	}
 }

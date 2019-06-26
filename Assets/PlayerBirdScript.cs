@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: Can move all of cheep records into BaseBird but currently I don't need to
+// TODO: Comment it all!
 public class PlayerBirdScript : BaseBird {
 	
 	private Cheep[] cheepRecords = new Cheep[20];
@@ -14,23 +16,28 @@ public class PlayerBirdScript : BaseBird {
 	// to start the timer again
 	// private bool reset = true;
 	
+	private bool canCheep = true;
+	
 	public override void Awake () {
 		base.Awake();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Jump"))
+		if (canCheep)
 		{
-			StartCheep();
-			birdGraphicsScript.StartCheep();
-			isCurrentlyCheeping = true;
-		}
-		
-		if (Input.GetButtonUp("Jump"))
-		{
-			birdGraphicsScript.StopCheep();
-			isCurrentlyCheeping = false;
+			if (Input.GetButtonDown("Jump"))
+			{
+				StartCheep();
+				birdGraphicsScript.StartCheep();
+				isCurrentlyCheeping = true;
+			}
+			
+			if (Input.GetButtonUp("Jump"))
+			{
+				birdGraphicsScript.StopCheep();
+				isCurrentlyCheeping = false;
+			}
 		}
 	}
 	
@@ -140,6 +147,16 @@ public class PlayerBirdScript : BaseBird {
 	// this is so you can't catch two pauses in one long pause. Ensures a cheep needs to happen again to register a new pause
 	public void ResetCurrentPause () {
 		lastPauseStartTimeStamp = 0;
+	}
+	
+	public void DisableCheeps () {
+		canCheep = false;
+		birdAS.volume = 0;
+	}
+	
+	public void EnableCheeps () {
+		canCheep = true;
+		birdAS.volume = 1;
 	}
 }
 
