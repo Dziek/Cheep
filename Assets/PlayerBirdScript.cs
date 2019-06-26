@@ -28,9 +28,10 @@ public class PlayerBirdScript : BaseBird {
 		{
 			if (Input.GetButtonDown("Jump"))
 			{
-				StartCheep();
+				// StartCheep();
 				birdGraphicsScript.StartCheep();
 				isCurrentlyCheeping = true;
+				StartCheep();
 			}
 			
 			if (Input.GetButtonUp("Jump"))
@@ -56,12 +57,13 @@ public class PlayerBirdScript : BaseBird {
 		lastCheepStartTimeStamp = Time.time;
 		birdAS.Play();
 		
-		while (Input.GetButton("Jump"))
+		// while (Input.GetButton("Jump"))
+		while (isCurrentlyCheeping)
 		{
 			
 			
 			
-			
+			lastPauseStartTimeStamp = 0; //TODO: Test this doesn't break EVERYTHING
 			yield return null;
 		}
 		
@@ -136,6 +138,7 @@ public class PlayerBirdScript : BaseBird {
 	// get length of pause by taking current time - the time the pause started
 	public float GetCurrentPause () {
 		// if (reset == true)
+		
 		if (lastPauseStartTimeStamp == 0 || isCurrentlyCheeping)
 		{
 			return 0;

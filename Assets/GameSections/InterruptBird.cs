@@ -56,7 +56,8 @@ public class InterruptBird : GameSection {
 				StartCoroutine("Phase1");
 			}
 			
-			if (noOfInterrupts >= noOfInterruptsNeeded)
+			// if (noOfInterrupts >= noOfInterruptsNeeded)
+			if (currentInterruptValue >= noOfInterruptsNeeded)
 			{
 				//TODO: Put in actual ending. (They get too close and the interruptBird balks and rolls away?)
 				SectionEnd();
