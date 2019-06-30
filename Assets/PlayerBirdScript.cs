@@ -6,7 +6,7 @@ using UnityEngine;
 // TODO: Comment it all!
 public class PlayerBirdScript : BaseBird {
 	
-	private Cheep[] cheepRecords = new Cheep[20];
+	private Cheep[] cheepRecords = new Cheep[1];
 	// private float currentPause;
 	
 	private float lastCheepStartTimeStamp = 0;
@@ -73,6 +73,7 @@ public class PlayerBirdScript : BaseBird {
 		lastPauseStartTimeStamp = Time.time;
 	}
 	
+	//TODO? Could flip this so that the most recent one is always 0, and it pushes back each time. Then can always know the index of most recent
 	void AddNewCheepToRecord () {
 		
 		// get length of cheep by taking current time - the time the cheep started
@@ -105,6 +106,7 @@ public class PlayerBirdScript : BaseBird {
 		}
 	}
 	
+	//TODO? Could flip this so that the most recent one is always 0, and it pushes back each time. Then can always know the index of most recent
 	void AddPauseToRecord () {
 		
 		// we don't need the first pause, it doesn't matter in the game at all
@@ -133,6 +135,12 @@ public class PlayerBirdScript : BaseBird {
 	// get length of cheep by taking current time - the time the cheep started
 	public float GetCurrentCheep () {
 		return Time.time - lastCheepStartTimeStamp;
+	}
+	
+	// TODO? Make this function when array not full - unsure if needed
+	// This will hopefully only be used once the cheep array is full, so it assume .Length is the last one
+	public float GetLastCheepLength () {
+		return cheepRecords[cheepRecords.Length-1].cheepLength;
 	}
 	
 	// get length of pause by taking current time - the time the pause started

@@ -113,47 +113,47 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &34263647
+--- !u!1001 &389738578
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalPosition.x
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4519182185978686, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+    - target: {fileID: 4250336264022236, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c87d9f9ddc8efea4199576a11019de9e, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 9b22a62297cc41c4891a342b13ecb950, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &449309781
 GameObject:
@@ -404,11 +404,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &509939464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1785273315906218, guid: c87d9f9ddc8efea4199576a11019de9e,
-    type: 2}
-  m_PrefabInternal: {fileID: 34263647}
 --- !u!1 &523221357
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +479,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523221357}
   m_CullTransparentMesh: 0
+--- !u!1 &556644874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1405760847277794, guid: 9b22a62297cc41c4891a342b13ecb950,
+    type: 2}
+  m_PrefabInternal: {fileID: 389738578}
 --- !u!1 &684633071
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &880548224
 Transform:
   m_ObjectHideFlags: 0
@@ -750,7 +750,7 @@ MonoBehaviour:
   otherBirdCheeping: 0
   cameraGO: {fileID: 449309781}
   playerBirdGO: {fileID: 1619957375}
-  otherBirdGO: {fileID: 509939464}
+  otherBirdGO: {fileID: 0}
   playerBirdScript: {fileID: 1619957377}
 --- !u!1 &914459761
 GameObject:
@@ -1210,7 +1210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1258033401
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,9 +1239,9 @@ MonoBehaviour:
   title: Flattery
   playerCheeping: 0
   otherBirdCheeping: 0
-  cameraGO: {fileID: 0}
-  otherBirdGO: {fileID: 0}
-  playerBirdScript: {fileID: 0}
+  cameraGO: {fileID: 449309781}
+  otherBirdGO: {fileID: 556644874}
+  playerBirdScript: {fileID: 1619957377}
 --- !u!1 &1421846639
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,7 +60,8 @@ public class InterruptBird : GameSection {
 			if (currentInterruptValue >= noOfInterruptsNeeded)
 			{
 				//TODO: Put in actual ending. (They get too close and the interruptBird balks and rolls away?)
-				SectionEnd();
+				// SectionEnd();
+				StartCoroutine("Phase2");
 				return;
 			}
 			
@@ -145,6 +146,28 @@ public class InterruptBird : GameSection {
 		}
 		
 		cameraGO.transform.position = endPos;
+	}
+	
+	IEnumerator Phase2 () {
+		
+		float timeToMoveCamera = 1;
+		float t = 0;
+		
+		Vector3 startPos = cameraGO.transform.position;
+		Vector3 endPos = cameraGO.transform.position + Vector3.right * -6.5f;
+		
+		while (t < timeToMoveCamera)
+		{
+			cameraGO.transform.position = Vector3.Lerp(startPos, endPos, t / timeToMoveCamera);
+			t += Time.deltaTime;
+			
+			yield return null;
+		}
+		
+		cameraGO.transform.position = endPos;
+		// Camera.main.orthographicSize = 5;
+		
+		SectionEnd();
 	}
 	
 	public override void SectionEnd () {
